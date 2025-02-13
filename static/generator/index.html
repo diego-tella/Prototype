@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Random Password Generator</title>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #00ff00;
+            border: none;
+            color: #0d0d0d;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #00cc00;
+        }
+        #password {
+            margin-top: 20px;
+            font-size: 1.5em;
+            border: 2px solid #00ff00;
+            padding: 10px;
+            width: 300px;
+            background-color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <h1>Futuristic Password Generator</h1>
+    <button onclick="generatePassword()">Generate Password</button>
+    <br>
+    <center><div id="password"></div></center>
+
+    <script>
+        function generatePassword() {
+            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
+            let password = "";
+            for (let i = 0; i < 12; i++) {
+                password += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById("password").innerText = password;
+        }
+    </script>
+</body>
+</html>
